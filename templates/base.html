@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+    <title>APP DE FILMES</title>
+</head>
+<body>
+
+    <header id="topo">
+        
+            <div>
+                <h1 class='title'>Catalogo de Filmes</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Catalogo</a></li>
+                    <li><a href="/form">Cadastrar Filmes</a></li>
+                </ul>
+            </nav>    
+        
+    </header>
+
+    <main class="mx-auto">
+        <div id="container">
+            {% block content %}
+                <!-- Conteudo -->
+            {% endblock  %}
+        </div>
+    </main>
+    
+</body>
+</html>
