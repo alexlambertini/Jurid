@@ -3,10 +3,11 @@
 *.pot
 *.pyc
 __pycache__~
-
+.vscode
 media
 venv
 .env
+#db.sqlite3
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
