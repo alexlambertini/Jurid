@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
 
 <div class="card--container">
-    <h2>Vikings<i>2013</i></h2>
-    <img src="" alt="">
-    <ul>
-        <li>16</li>
-        <li>Gemero</li>
-        <li>Duracao</li>
-    </ul>
-    <h3>Sinopse:</h3>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, eligendi dolor architecto fugit saepe iure odit in quidem, ea quisquam ex aspernatur obcaecati error quod beatae sunt enim earum odio.</p>
+    {% for item in obj %}
+
+        <div>
+            <img src="{{ item.imagem.url }}" alt="{{item.titulo}}">
+        </div>
+        
+        <div>
+            <h2>{{item.titulo}}<i>{{item.ano}}</i></h2>
+            <ul>
+                <li>{{item.classificacao}}</li>
+                <li>{{item.genero}}</li>
+                <li>{{item.duracao}}</li>
+            </ul>
+            <h3>Sinopse:</h3>
+            <p>{{item.sinopse}}</p>
+        </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
