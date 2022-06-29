@@ -6,5 +6,10 @@
         {{ form.as_ul }}
         <button type="submit">Enviar</button>
     </form>
+
+    {% if obj %}
+        <a href="{ % url 'excluir' %}" class='exclud'>Excluir</a>
+    {% endif %}
+    
 {% endblock %}
 

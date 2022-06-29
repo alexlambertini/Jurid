@@ -1,4 +1,5 @@
 from django.db import models
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -14,3 +15,12 @@ class Filme(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+def delete(self):
+    self.FieldFile.delete(save=False)
+    self.delete()
+
+@receiver(models.signals.post_delete, sender=Filme)
+def remove_file_from_s3(sender, instance, using, **kwargs):
+    instance.imagem.delete(save=False)

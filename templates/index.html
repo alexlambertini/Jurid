@@ -19,8 +19,18 @@
             </ul>
             <h3>Sinopse:</h3>
             <p>{{item.sinopse}}</p>
+
+            <div id="actions_btn">
+                <a href="{% url 'app:edit' item.id %}" class='btn-action'>Editar</a> 
+                <a href="{% url 'app:delete' item.id %}" class='btn-action'>Deletar</a>
+            </div>
         </div>
+
+        {% empty %}
+            <h1>Ops, você não tem filmes cadastrados!</h1>
+
     {% endfor %}
+
 </div>
 
 {% endblock %}
