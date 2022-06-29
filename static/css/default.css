@@ -20,8 +20,10 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
+
 :root {
     --color-text: #DAEAFF;
+    --color-contrast: #DE5097;
     --background-color: rgba(13, 31, 51, 1);
     --background-card: rgba(255, 255, 255, 0.04);
 }
@@ -32,35 +34,95 @@ html {
   }
 
 #topo {
-    width: 60%;
+    width: calc( 100% -60px) ;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px 30px;
     margin-bottom: 40px;
     border-bottom: 1px solid #daeaff38;
-}
-
-#topo h1 {
-    color: white;
-    font-family: Poppins, 'sans-serif;';
-    font-size: 2.5rem;
-    text-transform: uppercase;
-}
-
-#topo h1 a {
-    color: white;
-    text-decoration: none;
-}
-
-#topo h1 a:hover {
-    color: var(--color-text);
+    background-color: #1451932a;
 }
 
 #topo nav {
     padding-top: 0px;
 }
+
+.danger {
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.danger h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #fff;
+    margin-top: 10px;
+    font-family: Roboto, 'sans-serif';
+}
+
+
+.box--container {
+    background-color: #2452833f;
+    border: 1px solid #2b629c;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+
+.blank {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100vw;
+    height: 79vh;
+    z-index: 11;
+    background: url('../images/blank.png') no-repeat center center;
+}
+
+.blank h1 {
+    display: none;
+}
+
+
+.box--container form {
+    margin: 0 auto!important;
+    width: 100% !important;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 55px;
+    margin-right: 20px;
+}
+
+.logo h1 {
+    /* color: #66C6B5; */
+    color:var(--color-text);
+    font-family: Poppins, 'sans-serif;';
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    /* border: 1px solid #66C6B5; */
+    padding: 10px 0px;
+    font-weight: 500;
+}
+
+.logo  {
+    color: white;
+    text-decoration: none;
+}
+
+.logo h1 a:hover {
+    color: var(--color-text);
+}
+
 
 nav ul {
     display: flex;
@@ -73,8 +135,6 @@ nav ul li {
 
 nav ul li:last-child  {
     margin-right: 0;
-    border-left: 1px solid var(--color-text);
-    padding-left: 10px;
 }
 
 nav ul li a  {
@@ -83,17 +143,25 @@ nav ul li a  {
     font-size: 1.3rem;
     text-decoration: none;
     font-weight: bold;
+    font-family: Roboto, 'sans-serif';
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--color-contrast);
+    display: block;
 }
 
+
 nav ul li a:hover {
-    text-decoration: underline;
+    filter: brightness(112%);
+    animation: bounce 0.3s backwards alternate;
+
 }
+
 
 .card--container {
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 3fr; 
-    /* grid-template-rows: 1fr 1fr;  */
     gap: 30px; 
     grid-template-areas: 
       ". ."
@@ -140,9 +208,10 @@ nav ul li a:hover {
 }
 
 .card--container ul li:first-child{
-    padding: 3px 5px;
-    border: 1px solid #DAEAFF;
+    padding: 4px 10px;
+    border-radius: 5px;
     margin-right: 15px;
+    background-color: var(--color-contrast);
 }
 
 .card--container ul li:last-child {
@@ -193,16 +262,19 @@ nav ul li a:hover {
     border: 4px solid #daeaff38;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
+
 }
 
 .card--container img:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
+    animation: player 0.3s forwards ;
 }
 
 
 #actions_btn {
     display: flex;
     border-bottom: 0 none;
+    margin-top: 20px;
 }
 
 #actions_btn a {
@@ -211,6 +283,45 @@ nav ul li a:hover {
 
 #actions_btn a:first-child {
     margin-left: 0;
+}
+
+
+
+.play-button {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,3));
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    border-radius: 100px;
+    
+}
+   
+.play-button::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 10px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid;
+    top: 4px;
+    left: 7px
+} 
+
+.play-position {
+    position: relative;
+    top: 50%;
+    left: 40%;
+    background-color: rgba(0, 0, 0, 0.328);
+    z-index: 10;
+    cursor: pointer;
+    animation: player 0.3s forwards ;
+    animation-delay: 0.8s;
 }
 
 form {
@@ -236,24 +347,119 @@ form input, textarea {
     padding: 10px;
 }
 
-button {
-    border-radius: 5px;
-    padding: 5px;
-    border: 0 none;
-    background-color: rgba(21, 59, 121, 0.765);
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    width: 30%;
+.btn-form-position {
+    display: flex;
+    justify-content: end;
     margin-top: 20px;
 }
 
-button:hover {
+.btn-form {
+    display: flex;
+    width: 30%;
+    border: 0;
+    height: 50px;
+    border-radius: 8px;
+    color: white;
+    font-family: Roboto, 'sans-serif';
+    font-weight: bold;
+    font-size: 1.6rem;
+    background-color: #245283;
+    border: 1px solid #2b629c;
+    margin: auto;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-form:hover {
     filter: brightness(1.75);
 }
 
-
 form li {
     list-style: none;
-
 }
+
+.title {
+    display: block;
+    font-size: 2.9rem;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #daeaff38;
+    font-family: Poppins, 'sans-serif';
+    font-weight: 300;
+}
+
+.icon--movie {
+    background: url('../images/icon-movie.svg') no-repeat 0 8px;
+    background-size: 25px;
+    padding-left: 42px;
+}
+
+
+.fadeIn {
+    animation: fadein 1s ease;
+}
+
+.fadeInInverse {
+    animation: fadeinInverse 1s ease;
+}
+
+@keyframes bounce { 
+
+    0% { 
+        transform: translateY(0); 
+    } 
+
+    50% { 
+        transform: translateY(-5px); 
+    }
+
+    100% { 
+        transform: translateY(0px); 
+    }
+}
+
+@keyframes animecard {
+
+    0% {
+        visibility: hidden;
+        transform: scale(0);
+      }
+
+      100% {
+        visibility: visible;
+        transform: scale(1);
+      }
+    
+}
+
+@keyframes fadein {
+
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeinInverse {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+

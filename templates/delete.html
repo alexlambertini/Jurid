@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %} 
-<h1>Você tem certeza que deseja deletar o filme?</h1>
+
+<div class="box--container">
+
+    <div class="danger mx-auto">
+        <h1>Você tem certeza que deseja deletar este item?</h1>
+    </div> 
     <form method = "post" enctype="multipart/form-data">
         {% csrf_token %}
-        <button type="submit">Confirmar</button>
-    </form>    
+        <button type="submit" class="btn-form">Confirmar</button>
+    </form> 
+
+</div>
+
 {% endblock %}

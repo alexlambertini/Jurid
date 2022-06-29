@@ -6,31 +6,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
-    <title>APP DE FILMES</title>
+    <script type="text/javascript" src="{% static 'js/amagiloader.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/functions.js' %}" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Movie</title>
 </head>
 <body>
 
-    <header id="topo">
-        
-        <h1> <a href="/">Catálogo de Filmes</a></h1>
+    <script>
+        AmagiLoader.show();
+        setTimeout(() => {
+           AmagiLoader.hide();
+        }, 300);
 
-        <nav>
-            <ul>
-                <li><a href="/">Catálogo</a></li>
-                <li><a href="/form/">Cadastrar Filmes</a></li>
-            </ul>
-        </nav>    
-        
-    </header>
+    </script>
 
-    <main class="mx-auto">
-        <div id="container">
-            {% block content %}
-                <!-- Conteudo -->
-            {% endblock  %}
-        </div>
-    </main>
-    
+    <div class="loader">
+        
+        <header id="topo">
+
+                <a class='logo' href="{% url 'app:index' %}">
+                    <img src="{% static 'images/logo2.png' %}" alt="M-movie"> 
+                    <h1>Movie - Seu APP de Filmes</h1>
+                </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="/">Catálogo</a></li>
+                    <li><a href="/form/">Cadastrar Filmes</a></li>
+                </ul>
+            </nav>    
+            
+        </header>
+
+        <main class="mx-auto">
+            <div id="container">
+                {% block content %}
+                    <!-- Conteudo -->
+                {% endblock  %}
+            </div>
+        </main>
+
+    </div>
 </body>
 </html>

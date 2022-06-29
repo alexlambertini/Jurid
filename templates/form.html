@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="box--container">
+    
+    <h1 class="title icon--movie">Cadastro de filme</h1>
+
     <form method = "post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_ul }}
-        <button type="submit">Enviar</button>
+        
+        <div class="btn-form-position">
+            <a href="{% url 'app:index' %}" class="btn-form">Cancelar</a>
+            <button type="submit" class="btn-form">Cadastrar</button>
+        </div>
     </form>
 
-    {% if obj %}
-        <a href="{ % url 'excluir' %}" class='exclud'>Excluir</a>
-    {% endif %}
-    
+</div>   
 {% endblock %}
 

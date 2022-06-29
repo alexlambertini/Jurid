@@ -5,7 +5,7 @@ from app.models import Filme
 # Create your views here.
 
 def index(request):
-    obj =  Filme.objects.all()
+    obj =  Filme.objects.all().order_by('-id')
     return render(request, 'index.html', {'obj': obj})
 
 

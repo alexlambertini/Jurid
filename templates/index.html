@@ -3,14 +3,16 @@
 
 {% block content %}
 
+
+
 <div class="card--container">
     {% for item in obj %}
 
-        <div>
+        <div class="fadeInInverse">
             <img src="{{ item.imagem.url }}" alt="{{item.titulo}}">
         </div>
-        
-        <div>
+
+        <div class="fadeIn">
             <h2>{{item.titulo}}<i>{{item.ano}}</i></h2>
             <ul>
                 <li>{{item.classificacao}}</li>
@@ -27,10 +29,13 @@
         </div>
 
         {% empty %}
-            <h1>Ops, você não tem filmes cadastrados!</h1>
+        <div class="blank">
+            <h1>Nenhum item encontrado</h1>
+        </div>
 
     {% endfor %}
 
 </div>
+
 
 {% endblock %}
