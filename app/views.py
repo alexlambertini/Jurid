@@ -1,3 +1,5 @@
+from urllib import response
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from app.forms import filmForm
 from app.models import Filme
@@ -45,12 +47,9 @@ def edit(request, id):
 def delete(request, id):
     obj = Filme.objects.get(id=id)
     if request.method == 'POST':
-        obj.delete()
-        return redirect('app:index')
+            try:
+                obj.delete()
+            except:
+                return HttpResponse('Erro ao deletar')
     context = {'obj': obj}
     return render(request, 'delete.html', context)
-
-
-def update(request, id):
-    obj = Filme.objects.get(id=id)
-    obj 
