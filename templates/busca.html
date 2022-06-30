@@ -4,21 +4,17 @@
     
 {% block content %}
 
-<h1 class='title'>BUSCA:</h1>
+<div class="fadeIn">
 
-    <div class="info--busca">
-        
+    <h1 class='title'>Busca:</h1>
+
+    <div class="info--busca">  
         {% for filme in object_list %}
-
-
             <ul>
                 <li>
                     <div class="box--container">
-
                         <div class="grid">
-
                             <div><img class="img--busca" src="{{ filme.imagem.url }}" alt="{{filme.titulo}}"></div>
-
                             <div>
                                 <h2>{{ filme.titulo }}, {{ filme.ano }} </h2> 
                                 <h3> Sinopse:</h3> <p>{{filme.sinopse}}</p> 
@@ -26,13 +22,12 @@
                                     <h3> - Diretor:</h3> <p>{{ filme.diretor }}</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </li>
             </ul>
         {% endfor %}
     </div>
-
+    
+</div>
 {% endblock %}
