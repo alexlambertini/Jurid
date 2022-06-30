@@ -16,8 +16,14 @@
                 <li>{{item.genero}}</li>
                 <li>{{item.duracao}}</li>
             </ul>
+
             <h3>Sinopse:</h3>
             <p>{{item.sinopse}}</p>
+
+            <div class="flex">
+                <h4 class="subtilte">Diretor:</h4>
+                <p>{{item.diretor}}</p>
+            </div>
 
             <div id="actions_btn">
                 <a href="{% url 'app:edit' item.id %}" class='btn-action'>Editar</a> 

@@ -11,7 +11,15 @@
         
         <div class="btn-form-position">
             <a href="{% url 'app:index' %}" class="btn-form">Cancelar</a>
-            <button type="submit" class="btn-form">Cadastrar</button>
+
+
+
+            {% if not obj %}
+                <button type="submit" class="btn-form">Cadastrar</button>
+                {% else %}
+                <button type="submit" class="btn-form">Atualizar</button>
+            {% endif %}
+
         </div>
     </form>
 
