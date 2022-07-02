@@ -355,6 +355,10 @@ form input, textarea {
     padding: 10px;
 }
 
+form input::placeholder, textarea::placeholder {
+    color: #989898;
+}
+
 .btn-form-position {
     display: flex;
     justify-content: end;
