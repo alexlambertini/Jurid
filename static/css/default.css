@@ -60,7 +60,7 @@ html {
     font-weight: normal;
     color: #fff;
     margin-top: 10px;
-    font-family: Roboto, 'sans-serif';
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -106,7 +106,7 @@ html {
 .logo h1 {
     /* color: #66C6B5; */
     color:var(--color-text);
-    font-family: Poppins, 'sans-serif;';
+    font-family: 'Poppins', sans-serif;
     font-size: 2.1rem;
     text-transform: uppercase;
     /* border: 1px solid #66C6B5; */
@@ -143,7 +143,7 @@ nav ul li a  {
     font-size: 1.3rem;
     text-decoration: none;
     font-weight: bold;
-    font-family: Roboto, 'sans-serif';
+    font-family: 'Roboto', sans-serif;
     padding: 10px;
     border-radius: 8px;
     background-color: var(--color-contrast);
@@ -360,7 +360,7 @@ form input, textarea {
     height: 50px;
     border-radius: 8px;
     color: white;
-    font-family: Roboto, 'sans-serif';
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 1.6rem;
     background-color: #245283;
@@ -386,7 +386,7 @@ form li {
     padding-bottom: 15px;
     margin-bottom: 30px;
     border-bottom: 1px solid #daeaff38;
-    font-family: Poppins, 'sans-serif';
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
 
