@@ -8,5 +8,6 @@ urlpatterns = [
     path('form/', v.form, name='form'),  
     path('edit/<int:id>/', v.edit, name='edit'),
     path('delete/<int:id>/', v.delete, name='delete'),
+    path("buscar/", v.SearchResultsView.as_view(), name='search_results'),
 ]
  

@@ -27,18 +27,24 @@
         
         <header id="topo">
 
-                <a class='logo' href="{% url 'app:index' %}">
-                    <img src="{% static 'images/logo2.png' %}" alt="M-movie"> 
-                    <h1>Movie - Seu APP de Filmes</h1>
-                </a>
-            
-            <nav>
-                <ul>
-                    <li><a href="/">Catálogo</a></li>
-                    <li><a href="/form/">Cadastrar Filmes</a></li>
-                </ul>
-            </nav>    
-            
+            <div class="flex-between">
+
+            <a class='logo' href="{% url 'app:index' %}">
+                <img src="{% static 'images/logo2.png' %}" alt="M-movie"> 
+                <h1>Movie - Seu APP de Filmes</h1>
+            </a>
+
+                <form class='buscar' action="{% url 'app:search_results' %}" method="get">
+                    <input name="q" type="text" placeholder="Buscar filme...">
+                </form>
+                
+                <nav>
+                    <ul>
+                        <li><a href="/">Catálogo</a></li>
+                        <li><a href="/form/">Cadastrar Filmes</a></li>
+                    </ul>
+                </nav>   
+            </div>
         </header>
 
         <main class="mx-auto">

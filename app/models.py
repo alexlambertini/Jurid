@@ -1,6 +1,7 @@
 from django.db import models
 from django.dispatch import receiver
 
+
 # Create your models here.
 
 class Filme(models.Model):
@@ -15,7 +16,6 @@ class Filme(models.Model):
 
     def __str__(self):
         return self.titulo
-
 
 def delete(self):
     self.FieldFile.delete(save=False)
